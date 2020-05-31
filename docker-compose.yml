@@ -7,6 +7,7 @@ services:
             - "3009:3000"
         volumes: 
             - $PWD/data:/data
+            - ./:/app/
         labels:
         - "traefik.http.routers.sync.rule=Host(`files4u.smascha.ai`)"
         - "traefik.http.routers.sync.entrypoints=websecure"
