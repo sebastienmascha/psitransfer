@@ -8,10 +8,10 @@ services:
         volumes: 
             - $PWD/data:/data
         labels:
-        - "traefik.http.routers.whoami.rule=Host(`whoami.smascha.ai`)"
-        - "traefik.http.routers.whoami.entrypoints=websecure"
-        - "traefik.http.routers.whoami.tls=true"
-        - "traefik.http.routers.whoami.tls.certresolver=mytlschallenge"
+        - "traefik.http.routers.sync.rule=Host(`files4u.smascha.ai`)"
+        - "traefik.http.routers.sync.entrypoints=websecure"
+        - "traefik.http.routers.sync.tls=true"
+        - "traefik.http.routers.sync.tls.certresolver=mytlschallenge"
         restart: always
         networks:
         - proxy
