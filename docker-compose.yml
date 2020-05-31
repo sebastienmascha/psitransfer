@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+    sync:
+        build: .
+        ports:
+            - "3009:3000"
+        volumes: 
+            - $PWD/data:/data
+
