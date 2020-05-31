@@ -7,4 +7,15 @@ services:
             - "3009:3000"
         volumes: 
             - $PWD/data:/data
+        labels:
+        - "traefik.http.routers.whoami.rule=Host(`whoami.smascha.ai`)"
+        - "traefik.http.routers.whoami.entrypoints=websecure"
+        - "traefik.http.routers.whoami.tls=true"
+        - "traefik.http.routers.whoami.tls.certresolver=mytlschallenge"
+        restart: always
+        networks:
+        - proxy
 
+networks:
+  proxy:
+    external: true
